@@ -17,6 +17,10 @@ jobs:
             password: ${{secrets.DOCKERHUB_PASSWORD}}
           run: |
             echo $password | docker login -u $username --password-stdin 
+        - name: logout to docker hub
+          id: docker-hub-logout
+          run: |
+            echo docker logout
         - name: build the docker image
           id: build-docker-image
           run: |
