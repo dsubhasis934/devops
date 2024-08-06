@@ -24,4 +24,4 @@ jobs:
             docker build . -f Dockerfile -t devops:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/devops:latest
+          run: docker push devops:latest
