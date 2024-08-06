@@ -21,5 +21,5 @@ jobs:
         echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
     - name: Run the Docker image
-      run: docker run -p 8080:80 ${{ env.IMAGE_TAG }}
+      run: docker run -d -p 8080:80 ${{ env.IMAGE_TAG }}
 
