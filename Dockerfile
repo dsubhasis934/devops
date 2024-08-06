@@ -16,8 +16,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Step 2: Serve the app
-FROM httpd:latest
+# Step 2: Serve the app with Nginx
+FROM nginx:latest
 
 # Copy the built app to Nginx's default public folder
 COPY --from=build /app/dist /usr/share/nginx/html
@@ -25,5 +25,4 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Expose port 80
 EXPOSE 80
 
-# Run Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# No need to specify CMD as the default command for Nginx is sufficient
