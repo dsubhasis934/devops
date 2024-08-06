@@ -21,7 +21,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t devops:latest
+            docker build . -f Dockerfile -t dsubho2020/devops-test:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push devops:latest
+          run: docker push dsubho2020/devops-test:latest
