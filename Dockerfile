@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Step 2: Serve the app
-FROM nginx:alpine
+FROM httpd:latest
 
 # Copy the built app to Nginx's default public folder
 COPY --from=build /app/dist /usr/share/nginx/html
