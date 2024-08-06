@@ -7,13 +7,14 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag devops:$(date +%s)
-           docker run -p 8080:80 devops
+
+    - name: Run the Docker image
+      run: docker run -d -p 8080:80 devops
