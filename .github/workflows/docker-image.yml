@@ -1,8 +1,9 @@
 name: Build Docker Image
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 jobs:
     build:
       name: push docker image to docker hub
